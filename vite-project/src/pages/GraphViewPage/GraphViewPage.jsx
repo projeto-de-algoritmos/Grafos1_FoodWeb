@@ -39,6 +39,7 @@ export default function GraphViewPage(props) { //props.graph
       {graph
       ?
       <ForceGraph3D
+        style={{maxWidth: '100%'}}
         graphData={graph}
         nodeAutoColorBy="group"
         linkDirectionalArrowLength={3.5}
