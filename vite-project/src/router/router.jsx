@@ -5,7 +5,7 @@ import PublicOutlet from './PublicOutlet';
 import GraphViewPage from '../pages/GraphViewPage/GraphViewPage';
 import AddNodePage from '../pages/AddNodePage/AddNodePage';
 import AddLinkPage from '../pages/AddLinkPage/AddLinkPage';
-import SearchEdgePage from '../pages/searchEdgePage/SeachEdgePage';
+import SearchEdgePage from '../pages/SearchEdgePage/SeachEdgePage';
 
 export default function AppRouter(props) {
     return (
