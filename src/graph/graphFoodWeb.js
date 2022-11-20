@@ -74,7 +74,7 @@ class Graph {
       return;
     }
     this.e++;
-    
+
     const nodeToLink = this.adj[n2];
     this.adj[n1].next = new Node(nodeToLink.idx, nodeToLink.specie, nodeToLink.habit, this.adj[n1].next);
 
@@ -84,7 +84,7 @@ class Graph {
 
   insertNode(specie, habit) {
     this.adj[this.i] = new Node(this.i, specie, habit, null);
-    
+
     this.i++;
     return this.i;
   }
@@ -123,7 +123,7 @@ class Graph {
       if (!this.adj[idx]) {
         continue;
       }
-      
+
       let node = this.adj[idx];
       g.adj[idx] = new Node(idx, node.specie, node.habit, null);
       node = g.adj[idx];
@@ -148,7 +148,7 @@ class Graph {
       }
 
       g.dfsVisit(g.adj[i]);
-      
+
       i++;
     }
 
@@ -157,7 +157,7 @@ class Graph {
 
   dfs1(n1, n2) {
     const g = this.cloneGraph();
-    return this.dfsVisit1(g.adj[n1], g.adj[n2]); 
+    return this.dfsVisit1(g.adj[n1], g.adj[n2]);
   }
 
   dfsVisit1(node1, node2) {
@@ -193,10 +193,10 @@ class Graph {
   bfs() {
     const g = this.cloneGraph();
     const queue = new Queue(g.n);
-    
+
     let i = 0;
     while (i < g.n) {
-      if (g.adj[i].isVisited) {
+      if ((g.adj[i] && g.adj[i].isVisited) || !g.adj[i]) {
         i++;
         continue;
       }
@@ -205,17 +205,17 @@ class Graph {
       while (!queue.isEmpty()) {
         let node = queue.remove();
         let nextNode = node.next;
-        
+
         while (nextNode) {
-          let index = nextNode.v;
-          if (!g.adj[index].isVisited) {
+          let index = nextNode.idx;
+          if (g.adj[index] && !g.adj[index].isVisited) {
             g.adj[index].isVisited = true;
             queue.put(g.adj[index]);
           }
           else {
             g.removeEdge(node, nextNode);
           }
-          
+
           nextNode = nextNode.next;
         }
       }
@@ -234,7 +234,7 @@ while (true) {
 
   if (input == 'b') {
     const aux = g.bfs();
-    aux.printMaze();
+    //aux.printMaze();
     aux.printGraph();
   } else if (input == 'd') {
     const aux = g.dfs();
