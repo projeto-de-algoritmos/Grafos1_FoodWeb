@@ -10,7 +10,7 @@
 | 19/0055201  |  Matheus Calixto Vaz Pinheiro |
 
 ## Sobre 
-Trata-se de uma aplicação de grafo no mundo real, adaptando-a para representar uma teia alimentar. O trabalho consiste em uma interface para visualização da teia alimentar, adição de nós, adição de arestas e pesquisa por caminhos.
+Trata-se de uma aplicação de grafo no mundo real, adaptando-a para representar uma teia alimentar. O trabalho consiste em uma interface para visualização da teia alimentar, adição de nós, adição de arestas e pesquisa por caminhos. Na opção "Ver teia alimentar" é possível vizualizar os nós e arestas adicionadas sendo que nós (espécies) de mesma cor estão presentes no mesmo nível trófico.
 
 ## Screenshots
 <div align="center">
