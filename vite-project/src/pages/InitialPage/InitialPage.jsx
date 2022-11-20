@@ -1,9 +1,10 @@
 import React from 'react';
+import { styles } from './style';
 
 export default function InitialPage(props) {
     return (
         <>
-            <div >
+            <div style={styles.optionsBlock}>
                 <div>
                     <h3>Ver teia alimentar</h3>
                 </div>
