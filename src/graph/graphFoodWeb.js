@@ -1,4 +1,4 @@
-const prompt = require('prompt-sync')();
+//const prompt = require('prompt-sync')();
 
 function printf(str) {
   return process.stdout.write(str);
@@ -224,77 +224,127 @@ class Graph {
 
     return g;
   }
+
+  seeder() {
+    this.insertNode("Árvore", "Produtor");        //0
+    this.insertNode("Grama", "Produtor");         //1
+    this.insertNode("Flor", "Produtor");          //2
+    this.insertNode("Capim", "Produtor");         //3
+    this.insertNode("Coala", "1º Consumidor");    //4
+    this.insertNode("Barata", "1º Consumidor");   //5
+    this.insertNode("Peixe", "1º Consumidor");    //6
+    this.insertNode("Águia", "2º Consumidor");    //7
+    this.insertNode("Aranha", "2º Consumidor");   //8
+    this.insertNode("Lobo", "2º Consumidor");     //9
+    this.insertNode("Urso", "3º Consumidor");     //10
+    this.insertNode("Cobra", "3º Consumidor");    //11
+    this.insertNode("Jacaré", "3º Consumidor");   //12
+    this.insertNode("Tubarão", "4º Consumidor");  //13
+
+    this.insertEdge(new Edge(4, 0));
+    this.insertEdge(new Edge(5, 1));
+    this.insertEdge(new Edge(6, 3));
+    this.insertEdge(new Edge(6, 5));
+    this.insertEdge(new Edge(4, 2));
+    this.insertEdge(new Edge(5, 2));
+    this.insertEdge(new Edge(4, 5));
+    this.insertEdge(new Edge(7, 6));
+    this.insertEdge(new Edge(7, 8));
+    this.insertEdge(new Edge(8, 5));
+    this.insertEdge(new Edge(9, 4));
+    this.insertEdge(new Edge(9, 5));
+    this.insertEdge(new Edge(10, 6));
+    this.insertEdge(new Edge(10, 8));
+    this.insertEdge(new Edge(10, 9));
+    this.insertEdge(new Edge(10, 11));
+    this.insertEdge(new Edge(11, 8));
+    this.insertEdge(new Edge(11, 4));
+    this.insertEdge(new Edge(11, 9));
+    this.insertEdge(new Edge(11, 13));
+    this.insertEdge(new Edge(12, 9));
+    this.insertEdge(new Edge(12, 11));
+    this.insertEdge(new Edge(12, 6));
+    this.insertEdge(new Edge(12, 4));
+    this.insertEdge(new Edge(13, 10));
+    this.insertEdge(new Edge(13, 12));
+  }
 }
 
-const v = prompt('Número de vertices: ')
-const g = new Graph(v);
+// const v = prompt('Número de vertices: ')
+// const g = new Graph(v);
 
-while (true) {
-  const input = prompt("Comando: ");
+// while (true) {
+//   const input = prompt("Comando: ");
 
-  if (input == 'b') {
-    const aux = g.bfs();
-    //aux.printMaze();
-    aux.printGraph();
-  } else if (input == 'd') {
-    const aux = g.dfs();
-    aux.printGraph();
-  } else if (input == 'd1') {
-    const [n1, n2] = prompt("Enter the n1 and n2: ").split(" ");
-    printf(`${g.dfs1(n1, n2)}\n`);
-  } else if (input == 'g') {
-    g.printGraph();
-  } else if (input == 'a') {
-    const [specie, habit] = prompt("Enter the specie and habit: ").split(" ");
-    g.insertNode(specie, habit);
-  } else if (input == 'e') {
-    const [n1, n2] = prompt("Enter the n1 and n2: ").split(" ");
-    g.insertEdge(new Edge(n1, n2));
-    g.printGraph();
-  } else if (input.includes('auto')) {
-    g.insertNode("Árvore", "Produtor");        //0
-    g.insertNode("Grama", "Produtor");         //1
-    g.insertNode("Flor", "Produtor");          //2
-    g.insertNode("Capim", "Produtor");         //3
-    g.insertNode("Coala", "1º Consumidor");    //4
-    g.insertNode("Barata", "1º Consumidor");   //5
-    g.insertNode("Peixe", "1º Consumidor");    //6
-    g.insertNode("Águia", "2º Consumidor");    //7
-    g.insertNode("Aranha", "2º Consumidor");   //8
-    g.insertNode("Lobo", "2º Consumidor");     //9
-    g.insertNode("Urso", "3º Consumidor");     //10
-    g.insertNode("Cobra", "3º Consumidor");    //11
-    g.insertNode("Jacaré", "3º Consumidor");   //12
-    g.insertNode("Tubarão", "4º Consumidor");  //13
+//   if (input == 'b') {
+//     const aux = g.bfs();
+//     //aux.printMaze();
+//     aux.printGraph();
+//   } else if (input == 'd') {
+//     const aux = g.dfs();
+//     aux.printGraph();
+//   } else if (input == 'd1') {
+//     const [n1, n2] = prompt("Enter the n1 and n2: ").split(" ");
+//     printf(`${g.dfs1(n1, n2)}\n`);
+//   } else if (input == 'g') {
+//     g.printGraph();
+//   } else if (input == 'a') {
+//     const [specie, habit] = prompt("Enter the specie and habit: ").split(" ");
+//     g.insertNode(specie, habit);
+//   } else if (input == 'e') {
+//     const [n1, n2] = prompt("Enter the n1 and n2: ").split(" ");
+//     g.insertEdge(new Edge(n1, n2));
+//     g.printGraph();
+//   } else if (input.includes('auto')) {
+//     g.insertNode("Árvore", "Produtor");        //0
+//     g.insertNode("Grama", "Produtor");         //1
+//     g.insertNode("Flor", "Produtor");          //2
+//     g.insertNode("Capim", "Produtor");         //3
+//     g.insertNode("Coala", "1º Consumidor");    //4
+//     g.insertNode("Barata", "1º Consumidor");   //5
+//     g.insertNode("Peixe", "1º Consumidor");    //6
+//     g.insertNode("Águia", "2º Consumidor");    //7
+//     g.insertNode("Aranha", "2º Consumidor");   //8
+//     g.insertNode("Lobo", "2º Consumidor");     //9
+//     g.insertNode("Urso", "3º Consumidor");     //10
+//     g.insertNode("Cobra", "3º Consumidor");    //11
+//     g.insertNode("Jacaré", "3º Consumidor");   //12
+//     g.insertNode("Tubarão", "4º Consumidor");  //13
 
-    g.insertEdge(new Edge(4, 0));
-    g.insertEdge(new Edge(5, 1));
-    g.insertEdge(new Edge(6, 3));
-    g.insertEdge(new Edge(6, 5));
-    g.insertEdge(new Edge(4, 2));
-    g.insertEdge(new Edge(5, 2));
-    g.insertEdge(new Edge(4, 5));
-    g.insertEdge(new Edge(7, 6));
-    g.insertEdge(new Edge(7, 8));
-    g.insertEdge(new Edge(8, 5));
-    g.insertEdge(new Edge(9, 4));
-    g.insertEdge(new Edge(9, 5));
-    g.insertEdge(new Edge(10, 6));
-    g.insertEdge(new Edge(10, 8));
-    g.insertEdge(new Edge(10, 9));
-    g.insertEdge(new Edge(10, 11));
-    g.insertEdge(new Edge(11, 8));
-    g.insertEdge(new Edge(11, 4));
-    g.insertEdge(new Edge(11, 9));
-    g.insertEdge(new Edge(11, 13));
-    g.insertEdge(new Edge(12, 9));
-    g.insertEdge(new Edge(12, 11));
-    g.insertEdge(new Edge(12, 6));
-    g.insertEdge(new Edge(12, 4));
-    g.insertEdge(new Edge(13, 10));
-    g.insertEdge(new Edge(13, 12));
-  }
-  else {
-    console.log('pula')
-  }
+//     g.insertEdge(new Edge(4, 0));
+//     g.insertEdge(new Edge(5, 1));
+//     g.insertEdge(new Edge(6, 3));
+//     g.insertEdge(new Edge(6, 5));
+//     g.insertEdge(new Edge(4, 2));
+//     g.insertEdge(new Edge(5, 2));
+//     g.insertEdge(new Edge(4, 5));
+//     g.insertEdge(new Edge(7, 6));
+//     g.insertEdge(new Edge(7, 8));
+//     g.insertEdge(new Edge(8, 5));
+//     g.insertEdge(new Edge(9, 4));
+//     g.insertEdge(new Edge(9, 5));
+//     g.insertEdge(new Edge(10, 6));
+//     g.insertEdge(new Edge(10, 8));
+//     g.insertEdge(new Edge(10, 9));
+//     g.insertEdge(new Edge(10, 11));
+//     g.insertEdge(new Edge(11, 8));
+//     g.insertEdge(new Edge(11, 4));
+//     g.insertEdge(new Edge(11, 9));
+//     g.insertEdge(new Edge(11, 13));
+//     g.insertEdge(new Edge(12, 9));
+//     g.insertEdge(new Edge(12, 11));
+//     g.insertEdge(new Edge(12, 6));
+//     g.insertEdge(new Edge(12, 4));
+//     g.insertEdge(new Edge(13, 10));
+//     g.insertEdge(new Edge(13, 12));
+//   }
+//   else {
+//     console.log('pula')
+//   }
+// }
+
+export {
+  Node,
+  Edge,
+  Graph
 }
