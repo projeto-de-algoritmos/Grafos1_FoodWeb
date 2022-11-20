@@ -157,7 +157,7 @@ class Graph {
 
   dfs1(n1, n2) {
     const g = this.cloneGraph();
-    return this.dfsVisit1(g.adj[n1], g.adj[n2]);
+    return g.dfsVisit1(g.adj[n1], g.adj[n2]);
   }
 
   dfsVisit1(node1, node2) {

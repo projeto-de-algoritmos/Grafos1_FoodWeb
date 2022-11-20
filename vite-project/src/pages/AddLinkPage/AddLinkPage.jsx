@@ -16,8 +16,8 @@ export default function AddLinkPage() {
   })
   species.sort()
   
-  const [speciePredator, setSpeciePredator] = useState()
-  const [speciePredated, setSpeciePredated] = useState()
+  const [speciePredator, setSpeciePredator] = useState(0)
+  const [speciePredated, setSpeciePredated] = useState(0)
 
   function handleAddEdge(e) {
     e.preventDefault()

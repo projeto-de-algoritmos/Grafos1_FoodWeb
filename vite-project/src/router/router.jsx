@@ -5,6 +5,7 @@ import PublicOutlet from './PublicOutlet';
 import GraphViewPage from '../pages/GraphViewPage/GraphViewPage';
 import AddNodePage from '../pages/AddNodePage/AddNodePage';
 import AddLinkPage from '../pages/AddLinkPage/AddLinkPage';
+import SearchEdgePage from '../pages/searchEdgePage/SeachEdgePage';
 
 export default function AppRouter(props) {
     return (
@@ -16,6 +17,7 @@ export default function AppRouter(props) {
                         <Route path="/teia" element={<GraphViewPage />} />
                         <Route path="/add-node" element={<AddNodePage />} />
                         <Route path="/add-link" element={<AddLinkPage />} />
+                        <Route path="/search-link" element={<SearchEdgePage />} />
                     </Route>
                 </Routes>
             </BrowserRouter>

@@ -17,7 +17,7 @@ export default function InitialPage(props) {
                 <div style={styles.option} onClick={() => navigate('/teia')}>
                     <h3>Ver teia alimentar</h3>
                 </div>
-                <div style={styles.option} onClick={() => navigate('/teia')}>
+                <div style={styles.option} onClick={() => navigate('/search-link')}>
                     <h3>Pesquisar ligação</h3>
                 </div>
                 <div style={styles.option} onClick={() => navigate('/add-node')}>
