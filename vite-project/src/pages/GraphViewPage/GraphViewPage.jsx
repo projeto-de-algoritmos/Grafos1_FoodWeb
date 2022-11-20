@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import ForceGraph3D from 'react-force-graph-3d';
 import SpriteText from 'three-spritetext'
+import { GraphContext } from '../../App';
 
 function convertGraph(g) {
   console.log(g)
@@ -27,9 +28,10 @@ function convertGraph(g) {
 
 export default function GraphViewPage(props) { //props.graph
   const [graph, setGraph] = useState(null)
+  const propsGraph = useContext(GraphContext);
 
   useEffect(() => {
-    setGraph(convertGraph(props.graph))
+    setGraph(convertGraph(propsGraph))
   }, [])
 
   return (
