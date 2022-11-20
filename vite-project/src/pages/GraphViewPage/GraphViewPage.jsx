@@ -4,7 +4,6 @@ import SpriteText from 'three-spritetext'
 import { GraphContext } from '../../App';
 
 function convertGraph(g) {
-  console.log(g)
   let nodes = g.adj.filter(node => node)
   const links = []
   nodes.forEach(node => {
