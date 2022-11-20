@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes, BrowserRouter} from 'react-router-dom';
-import { Outlet } from './outlet';
+import { Outlet } from './publicOutlet';
 
 export default function AppRouter(props) {
     return (
